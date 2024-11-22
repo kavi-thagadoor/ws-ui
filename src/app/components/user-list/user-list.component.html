@@ -6,7 +6,7 @@
     <li *ngFor="let user of users">{{ user.name }}</li>
   </ul>
 
-  <h3>Add New User</h3>
+  <h3>Message</h3>
   <input [(ngModel)]="newUser.name" placeholder="Enter user name" />
-  <button (click)="addUser()">Add User</button>
+  <button (click)="addUser()">send</button>
 </div>
