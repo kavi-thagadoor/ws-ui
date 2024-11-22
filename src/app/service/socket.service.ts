@@ -9,8 +9,12 @@ import { Observable } from 'rxjs';
 export class SocketService {
   private socket: Socket;
 
+  // available backend host links active
+
+  // https://ws-backend-6wrs.onrender.com
+
   constructor() {
-    this.socket = io('https://ws-backend-6wrs.onrender.com');
+    this.socket = io('https://back-one-orcin.vercel.app');
   }
 
   // Emit new user data to the server
