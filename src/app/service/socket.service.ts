@@ -10,7 +10,7 @@ export class SocketService {
   private socket: Socket;
 
   constructor() {
-    this.socket = io('http://localhost:3000');
+    this.socket = io('https://ws-backend-6wrs.onrender.com');
   }
 
   // Emit new user data to the server
