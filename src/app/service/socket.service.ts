@@ -13,8 +13,10 @@ export class SocketService {
 
   // https://ws-backend-6wrs.onrender.com
 
+  // https://back-one-orcin.vercel.app
+
   constructor() {
-    this.socket = io('https://back-one-orcin.vercel.app');
+    this.socket = io('https://ws-backend-6wrs.onrender.com');
   }
 
   // Emit new user data to the server
