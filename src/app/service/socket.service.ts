@@ -11,7 +11,7 @@ export class SocketService {
 
   // available backend host links active
 
-  // https://ws-backend-6wrs.onrender.com
+  // https://ws-backend-6wrs.onrender.com <- original
 
   // https://back-one-orcin.vercel.app
 
@@ -21,7 +21,16 @@ export class SocketService {
 
   // Emit new user data to the server
   addUser(user: any) {
-    this.socket.emit('addUser', user);
+
+    this.socket.emit('addUser', user, (response: { success: boolean; message: string }) => {
+      console.log('Received response from server:', response);
+
+      if (response.success) {
+        console.log('User added successfully:', response.message);
+      } else {
+        console.error('Failed to add user:', response.message);
+      }
+    });
   }
 
   // Listen for user list updates
@@ -29,6 +38,7 @@ export class SocketService {
     return new Observable((observer) => {
       this.socket.on('updateUserList', (users: any[]) => {
         observer.next(users);
+        console.log(users)
       });
     });
   }
